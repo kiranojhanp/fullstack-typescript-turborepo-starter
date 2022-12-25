@@ -13,6 +13,8 @@ build.libs:
 
 dev: run
 
+dev.api: run.api
+
 dev.react: run.web
 
 dev.native: run.native
@@ -44,6 +46,10 @@ release:
 run:
 	@printf "\033[0;32m>>> Running all apps in parallel\033[0m\n"
 	yarn run dev
+
+run.api:
+	@printf "\033[0;32m>>> Running nextjs app with api in parallel\033[0m\n"
+	yarn run dev --filter api
 
 run.web:
 	@printf "\033[0;32m>>> Running nextjs app with api in parallel\033[0m\n"
