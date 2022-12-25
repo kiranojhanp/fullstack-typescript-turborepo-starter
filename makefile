@@ -15,7 +15,7 @@ dev: run
 
 dev.api: run.api
 
-dev.react: run.web
+dev.web: run.web
 
 dev.native: run.native
 
@@ -48,7 +48,7 @@ run:
 	yarn run dev
 
 run.api:
-	@printf "\033[0;32m>>> Running nextjs app with api in parallel\033[0m\n"
+	@printf "\033[0;32m>>> Running nestjs app with api in parallel\033[0m\n"
 	yarn run dev --filter api
 
 run.web:
