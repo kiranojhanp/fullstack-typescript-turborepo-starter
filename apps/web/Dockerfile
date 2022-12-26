@@ -5,15 +5,15 @@ RUN apk update
 WORKDIR /app
 RUN yarn global add turbo
 COPY . .
-RUN turbo prune --scope=api --docker
+# Only Take packages that are needed to compile this app
+RUN turbo prune --scope=web --docker
 
 # Add lockfile and package.json's of isolated subworkspace
 FROM node:16-alpine AS installer
 RUN apk add --no-cache libc6-compat
 RUN apk update
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
-
-# First install the dependencies (as they change less often)
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/yarn.lock ./yarn.lock
 COPY --from=builder /app/turbo.json ./turbo.json
@@ -21,13 +21,16 @@ RUN yarn install --frozen-lockfile
 
 
 FROM node:16-alpine AS sourcer
+RUN apk add --no-cache libc6-compat
+RUN apk update
 WORKDIR /app
 COPY --from=installer /app/ .
 COPY --from=builder /app/out/full/ .
 COPY .gitignore .gitignore
-RUN yarn turbo run build --filter=api --include-dependencies --no-deps
+RUN yarn turbo run build --scope=web --include-dependencies --no-deps
 
 FROM node:16-alpine as runner
 WORKDIR /app
 COPY --from=sourcer /app/ .
-CMD [ "node", "apps/api/dist/main.js" ]
+WORKDIR /app/apps/web/
+CMD [ "npm", "start" ]
