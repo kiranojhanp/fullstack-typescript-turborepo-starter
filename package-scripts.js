@@ -15,7 +15,7 @@ module.exports = {
       docker: "docker-compose up -d",
       ci: {
         web: `npx turbo prune --scope=web && cd out && yarn install --frozen-lockfile`,
-        api: `npx turbo prune --scope=api && cd out && yarn install --frozen-lockfile && nps prisma.generate`,
+        api: `npx turbo prune --scope=api && cd out && yarn install --frozen-lockfile`,
       },
     },
     test: {
