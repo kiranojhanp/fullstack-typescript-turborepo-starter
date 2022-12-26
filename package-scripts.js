@@ -46,7 +46,12 @@ module.exports = {
         web: `docker build -t web . -f ${webPath}/Dockerfile`,
         api: `docker build -t api . -f ${apiPath}/Dockerfile`,
       },
+      down: "docker compose down"
     },
-    dev: "npx turbo run dev",
+    dev: {
+      default: `yarn run dev`,
+      web: `yarn run dev --filter api --filter web`,
+      native: `yarn run dev --filter api --filter native`,
+    },
   },
 };
