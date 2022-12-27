@@ -10,6 +10,7 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.20.4",
     "next": "latest",
     "react": "18.2",
     "react-dom": "18.1",
