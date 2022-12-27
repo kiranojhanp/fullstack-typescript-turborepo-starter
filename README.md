@@ -6,7 +6,9 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 - ✅ Nestjs
     - ✅ Env Config with Validation
 - ✅ NextJS
+- ✅ React native powered by expo
 - ✅ Testing using Jest
+- ✅ Github Actions
 - ✅ Reverse Proxy using Nginx
 - ✅ Docker Integration
 - ✅ Postgres Database
