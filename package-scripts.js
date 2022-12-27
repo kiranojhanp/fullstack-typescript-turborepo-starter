@@ -14,8 +14,8 @@ module.exports = {
       api: `nps prepare.docker`,
       docker: "docker-compose up -d",
       ci: {
-        web: `npx turbo prune --scope=web && cd out && yarn install --frozen-lockfile`,
-        api: `npx turbo prune --scope=api && cd out && yarn install --frozen-lockfile`,
+        web: `turbo prune --scope=web && cd out && yarn install --frozen-lockfile`,
+        api: `turbo prune --scope=api && cd out && yarn install --frozen-lockfile`,
       },
     },
     test: {
@@ -34,10 +34,10 @@ module.exports = {
       },
     },
     build: {
-      default: "npx turbo run build",
+      default: "yarn run build",
       ci: {
-        web: "cd out && npm run build",
-        api: "cd out && npm run build",
+        web: "cd out && yarn run build",
+        api: "cd out && yarn run build",
       },
     },
     docker: {
@@ -46,7 +46,7 @@ module.exports = {
         web: `docker build -t web . -f ${webPath}/Dockerfile`,
         api: `docker build -t api . -f ${apiPath}/Dockerfile`,
       },
-      down: "docker compose down"
+      down: "docker compose down",
     },
     dev: {
       default: `yarn run dev`,
