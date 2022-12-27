@@ -13,9 +13,10 @@ describe('AppController', () => {
   });
 
   describe('getHello', () => {
-    it('should return "Hello World!"', () => {
+    it('should return "Hello World!"', async () => {
       const appController = app.get(AppController);
-      expect(appController.getHello()).toBe('Hello World!');
+      expect(Array.isArray(await appController.getPeople())).toBe(true);
+      expect((await appController.getPeople()).length).toBeGreaterThan(0);
     });
   });
 });

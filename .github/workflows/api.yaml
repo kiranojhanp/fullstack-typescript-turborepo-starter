@@ -40,7 +40,7 @@ jobs:
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -53,6 +53,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn global add turbo
-      - run: npx nps prepare.ci.api
-      - run: npx nps build.ci.api
-      - run: npx nps test.ci.api
+      - run: yarn global add nps
+      - run: nps prepare.ci.api
+      - run: nps build.ci.api
+      - run: nps test.ci.api
