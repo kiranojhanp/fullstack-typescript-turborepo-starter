@@ -46,7 +46,7 @@ module.exports = {
         web: `docker build -t web . -f ${webPath}/Dockerfile`,
         api: `docker build -t api . -f ${apiPath}/Dockerfile`,
       },
-      down: "docker compose down"
+      down: "docker compose down",
     },
     dev: {
       default: `yarn run dev`,
