@@ -1,9 +1,11 @@
 const path = require("path");
 
 const apiPath = path.resolve(__dirname, "apps/api");
+const nativePath = path.resolve(__dirname, "apps/native");
 const webPath = path.resolve(__dirname, "apps/web");
 
 const ciApiPath = path.resolve(__dirname, "out/apps/api");
+const ciNativePath = path.resolve(__dirname, "out/apps/native");
 const ciWebPath = path.resolve(__dirname, "out/apps/web");
 
 module.exports = {
@@ -16,16 +18,19 @@ module.exports = {
       ci: {
         web: `turbo prune --scope=web && cd out && yarn install --frozen-lockfile`,
         api: `turbo prune --scope=api && cd out && yarn install --frozen-lockfile`,
+        native: `turbo prune --scope=native && cd out && yarn install --frozen-lockfile`,
       },
     },
     test: {
       default: `nps test.web test.api`,
       web: `cd ${webPath} && yarn test:watch`,
       api: `cd ${apiPath} && yarn test:watch`,
+      api: `cd ${nativePath} && yarn test:watch`,
       ci: {
         default: `nps test.ci.web test.ci.api`,
         web: `cd ${ciWebPath} && yarn test:ci`,
         api: `cd ${ciApiPath} && yarn test:ci`,
+        native: `cd ${ciNativePath} && yarn test:ci`,
       },
       watch: {
         default: `nps test.watch.web test.watch.api`,
@@ -38,6 +43,7 @@ module.exports = {
       ci: {
         web: "cd out && yarn run build",
         api: "cd out && yarn run build",
+        native: "cd out && yarn run build",
       },
     },
     docker: {

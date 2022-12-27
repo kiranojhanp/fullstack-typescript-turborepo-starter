@@ -4,9 +4,11 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 
 - ✅ Turborepo
 - ✅ Nestjs
-    - ✅ Env Config with Validation
+  - ✅ Env Config with Validation
 - ✅ NextJS
+- ✅ React native powered by expo
 - ✅ Testing using Jest
+- ✅ Github Actions
 - ✅ Reverse Proxy using Nginx
 - ✅ Docker Integration
 - ✅ Postgres Database
@@ -37,17 +39,22 @@ This turborepo has some additional tools already setup for you:
 - [Prettier](https://prettier.io) for code formatting
 
 ## Setup
+
 This starter kit is using turborepo and yarn workspaces for monorepo workflow.
 
 ### Prerequisites
+
 - Install nps by running
+
 ```
 npm i -g nps
 ```
+
 - Make sure docker and docker-compose are
- installed. Refer to docs for your operating system.
+  installed. Refer to docs for your operating system.
 
 ### Install Dependencies
+
 Make sure you are at root of the project and just run
 
 ```
@@ -69,6 +76,7 @@ To develop all apps and packages, run the following command at the root of proje
 ```
 nps dev
 ```
+
 The app should be running at `http://localhost` with reverse proxy configured.
 
 Similarly,
@@ -77,10 +85,13 @@ To develop mobile app, api and packages, run the following command at the root o
 ```
 nps dev.native
 ```
+
 To develop web app, api and packages, run the following command at the root of project:
+
 ```
 nps dev.web
 ```
 
 ## Other available commands
+
 Run `nps` in the terminal to see list of all available commands.
