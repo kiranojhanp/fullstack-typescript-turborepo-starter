@@ -11,8 +11,9 @@
     "dev": "yarn start",
     "lint": "TIMING=1 eslint . --ext .ts,.tsx,.json",
     "lint:fix": "yarn lint --fix",
-    "test": "jest --watchAll",
-    "test:ci": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:ci": "jest --ci"
   },
   "jest": {
     "preset": "jest-expo",
