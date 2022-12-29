@@ -12,7 +12,7 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 - ✅ Reverse Proxy using Nginx
 - ✅ Docker Integration
 - ✅ Postgres Database
-- ✅ Package scripts using NPS
+- ✅ Package scripts using NPS and makefile
 
 ## What's inside?
 
@@ -50,6 +50,12 @@ This starter kit is using turborepo and yarn workspaces for monorepo workflow.
 npm i -g nps
 ```
 
+- Install Gnu make (Only for windows)
+```
+choco install make
+```
+
+
 - Make sure docker and docker-compose are
   installed. Refer to docs for your operating system.
 
@@ -58,7 +64,7 @@ npm i -g nps
 Make sure you are at root of the project and just run
 
 ```
-nps prepare
+make service.start
 ```
 
 ### Build
@@ -66,7 +72,7 @@ nps prepare
 To build all apps and packages, run the following command at the root of project:
 
 ```
-nps build
+make build
 ```
 
 ### Develop
@@ -74,24 +80,27 @@ nps build
 To develop all apps and packages, run the following command at the root of project:
 
 ```
-nps dev
+make dev
 ```
 
 The app should be running at `http://localhost` with reverse proxy configured.
 
 Similarly,
+
+To develop only api and packages, run the following command at the root of project:
+
+```
+make dev.api
+```
+
 To develop mobile app, api and packages, run the following command at the root of project:
 
 ```
-nps dev.native
+make dev.native
 ```
 
 To develop web app, api and packages, run the following command at the root of project:
 
 ```
-nps dev.web
+make dev.web
 ```
-
-## Other available commands
-
-Run `nps` in the terminal to see list of all available commands.
