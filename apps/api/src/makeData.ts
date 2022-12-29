@@ -1,26 +1,26 @@
-import { faker, SexType } from '@faker-js/faker'
+import { faker, SexType } from '@faker-js/faker';
 
 type SubscriptionTier = 'free' | 'basic' | 'business';
 
 export type Person = {
   _id: string;
   avatar: string;
-  firstName: string
-  lastName: string
-  age: number
+  firstName: string;
+  lastName: string;
+  age: number;
   sex: SexType;
-  status: 'relationship' | 'complicated' | 'single'
-  subRows?: Person[]
-  subscriptionTier: SubscriptionTier
-}
+  status: 'relationship' | 'complicated' | 'single';
+  subRows?: Person[];
+  subscriptionTier: SubscriptionTier;
+};
 
 const range = (len: number) => {
-  const arr = []
+  const arr = [];
   for (let i = 0; i < len; i++) {
-    arr.push(i)
+    arr.push(i);
   }
-  return arr
-}
+  return arr;
+};
 
 const newPerson = (): Person => {
   return {
@@ -36,21 +36,21 @@ const newPerson = (): Person => {
       'single',
     ])[0]!,
     subscriptionTier: faker.helpers.arrayElement(['free', 'basic', 'business']),
-  }
-}
+  };
+};
 
 export function makeData(...lens: number[]) {
   const makeDataLevel = (depth = 0): Person[] => {
-    const len = lens[depth]!
+    const len = lens[depth]!;
     return range(len).map((d): Person => {
       return {
         ...newPerson(),
         subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
-      }
-    })
-  }
+      };
+    });
+  };
 
   return new Promise((resolve) => {
     resolve(makeDataLevel());
-  })
+  });
 }
