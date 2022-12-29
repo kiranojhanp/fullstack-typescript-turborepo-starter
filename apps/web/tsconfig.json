@@ -8,7 +8,5 @@
   "exclude": [
     "node_modules"
   ],
-  "compilerOptions": {
-    "isolatedModules": true
-  }
+  "compilerOptions": {}
 }

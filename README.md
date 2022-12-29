@@ -61,6 +61,11 @@ choco install make
 
 ### Install Dependencies
 
+If you're running it for the first time, extract the environment variables using
+```
+make extract.env
+```
+
 Make sure you are at root of the project and just run
 
 ```

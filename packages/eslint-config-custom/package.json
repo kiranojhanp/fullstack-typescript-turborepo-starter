@@ -1,0 +1,16 @@
+{
+  "name": "eslint-config-custom",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "index.ts",
+  "dependencies": {
+    "eslint-config-next": "^13.1.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-turbo": "^0.0.7",
+    "eslint-plugin-react": "^7.31.11"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
