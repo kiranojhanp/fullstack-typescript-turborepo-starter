@@ -5,5 +5,5 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  extends: ["custom-server"],
+  extends: ['custom-server'],
 };
