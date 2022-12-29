@@ -1,6 +1,4 @@
 {
   "root": true,
-  "extends": [
-    "native"
-  ]
+  "extends": ["native"]
 }
