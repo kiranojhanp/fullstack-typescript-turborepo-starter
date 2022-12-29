@@ -56,6 +56,7 @@ module.exports = {
     },
     dev: {
       default: `yarn run dev`,
+      api: `yarn run dev --filter api`,
       web: `yarn run dev --filter api --filter web`,
       native: `yarn run dev --filter api --filter native`,
     },

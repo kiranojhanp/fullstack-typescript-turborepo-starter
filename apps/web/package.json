@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "TIMING=1 next lint",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.20.4",
     "next": "latest",
     "react": "18.2",
     "react-dom": "18.1",
@@ -25,6 +28,7 @@
     "@types/react-dom": "^18.0.7",
     "babel-plugin-react-native-web": "^0.18.4",
     "eslint": "^8.19.0",
+    "eslint-config-custom": "*",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "tsconfig": "*",

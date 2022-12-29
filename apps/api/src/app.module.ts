@@ -5,11 +5,13 @@ import { AppService } from './app.service';
 import { validationSchemaForEnv } from './config/environment-variables';
 
 @Module({
-  imports: [ConfigModule.forRoot({
-    isGlobal: true,
-    validationSchema: validationSchemaForEnv,
-  })],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      validationSchema: validationSchemaForEnv,
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
