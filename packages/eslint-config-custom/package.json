@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "main": "index.ts",
+  "main": "index.js",
   "dependencies": {
     "eslint-config-next": "^13.1.1",
     "eslint-config-prettier": "^8.5.0",
