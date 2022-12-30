@@ -4,6 +4,7 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 
 - ✅ Turborepo
 - ✅ Nestjs
+  - ✅ Fastify
   - ✅ Env Config with Validation
 - ✅ NextJS
 - ✅ React native powered by expo

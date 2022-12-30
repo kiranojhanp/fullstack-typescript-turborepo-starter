@@ -28,6 +28,7 @@ dev.web:
 docker.api:
 	@printf "\033[0;32m>>> building api from Dockerfile\033[0m\n"
 	docker build -t api . -f apps/api/Dockerfile
+	docker run -d -p 8080:8080 --env-file=apps/api/.env api
 
 docker.web:
 	@printf "\033[0;32m>>> building web from Dockerfile\033[0m\n"

@@ -13,7 +13,8 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(),
   );
-  await app.listen(8080);
+
+  await app.listen(process.env.PORT, "0.0.0.0");
 
   if (module.hot) {
     module.hot.accept();
