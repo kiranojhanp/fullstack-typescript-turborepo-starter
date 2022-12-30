@@ -12,7 +12,6 @@ RUN turbo prune --scope=web --docker
 FROM node:16-alpine AS installer
 RUN apk add --no-cache libc6-compat
 RUN apk update
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/yarn.lock ./yarn.lock
@@ -30,6 +29,7 @@ COPY .gitignore .gitignore
 RUN yarn turbo run build --filter=web --include-dependencies --no-deps
 
 FROM node:16-alpine as runner
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY --from=sourcer /app/ .
 WORKDIR /app/apps/web/

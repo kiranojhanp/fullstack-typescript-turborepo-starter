@@ -33,6 +33,7 @@ docker.api:
 docker.web:
 	@printf "\033[0;32m>>> building web from Dockerfile\033[0m\n"
 	docker build -t web . -f apps/web/Dockerfile
+	docker run -d -p 3000:3000 web
 
 extract.env:
 	@printf "\033[0;32m>>> Extracting necessary .env \033[0m\n"
