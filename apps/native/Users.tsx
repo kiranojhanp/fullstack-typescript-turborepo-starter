@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { getUsers } from "queries";
 import React from "react";
-import { ActivityIndicator, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Button } from "ui";
 
 import { useQuery } from "@tanstack/react-query";
@@ -21,14 +21,17 @@ const Users = () => {
       {isLoading
         ? <ActivityIndicator size="large" />
         : (
-          data?.map((datum, index) => {
-            return (
-              <View key={index}>
-                <Text style={styles.name}>{datum.firstName} {datum.lastName}</Text>
-                <Text style={styles.sex}>Sex: {datum.sex}</Text>
-              </View>
-            );
-          })
+          <ScrollView style={styles.scrollview}>
+            {data?.map((datum, index) => {
+              return (
+                <View key={index}>
+                  <Text style={styles.name}>{datum.firstName} {datum.lastName}</Text>
+                  <Text style={styles.sex}>Sex: {datum.sex}</Text>
+                </View>
+              );
+            })
+            }
+          </ScrollView>
         )}
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -53,6 +56,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     fontSize: 28,
+  },
+  scrollview: {
+    marginTop: 20,
   },
   sex: {
     marginBottom: 20,
