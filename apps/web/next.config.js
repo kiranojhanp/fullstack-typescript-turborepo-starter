@@ -1,5 +1,11 @@
 module.exports = {
   reactStrictMode: true,
+  images: {
+    domains: [
+      'cloudflare-ipfs.com',
+      'https://cloudflare-ipfs.com',
+    ],
+  },
   webpack: (config) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),

@@ -1,12 +1,8 @@
+import type { Post } from '../types/posts';
 import { getData } from "./utils";
 
-export interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
+const baseUrl: string = "https://jsonplaceholder.typicode.com";
 
 export const getPosts = async (): Promise<Post[]> => {
-  return await getData("/posts");
+  return await getData(baseUrl, "/posts");
 }

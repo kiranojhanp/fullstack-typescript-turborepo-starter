@@ -3,3 +3,5 @@ describe('truth', () => {
     expect(true).toEqual(true);
   });
 });
+
+export default {}
