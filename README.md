@@ -8,6 +8,8 @@ This is fullstack typescript turborepo starter. It comes with the following feat
   - ✅ Env Config with Validation
 - ✅ NextJS
 - ✅ React native powered by expo
+- ✅ Shared UI components using react native web
+- ✅ Shared data management using tanstack query
 - ✅ Testing using Jest
 - ✅ Github Actions
 - ✅ Reverse Proxy using Nginx
