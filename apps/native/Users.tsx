@@ -1,13 +1,23 @@
 import { StatusBar } from "expo-status-bar";
 import { getUsers } from "queries";
 import React from "react";
-import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { Button } from "ui";
 
 import { useQuery } from "@tanstack/react-query";
 
 const Users = () => {
-  const { data, isLoading } = useQuery({ queryKey: ['users'], queryFn: getUsers });
+  const { data, isLoading } = useQuery({
+    queryKey: ["users"],
+    queryFn: getUsers,
+  });
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.header}>Users</Text>
@@ -18,34 +28,35 @@ const Users = () => {
         }}
         text="Boop"
       />
-      {isLoading
-        ? <ActivityIndicator size="large" />
-        : (
-          <ScrollView style={styles.scrollview}>
-            {data?.map((datum, index) => {
-              return (
-                <View key={index}>
-                  <Text style={styles.name}>{datum.firstName} {datum.lastName}</Text>
-                  <Text style={styles.sex}>Sex: {datum.sex}</Text>
-                </View>
-              );
-            })
-            }
-          </ScrollView>
-        )}
+      {isLoading ? (
+        <ActivityIndicator size="large" />
+      ) : (
+        <ScrollView style={styles.scrollview}>
+          {data?.map((datum, index) => {
+            return (
+              <View key={index}>
+                <Text style={styles.name}>
+                  {datum.firstName} {datum.lastName}
+                </Text>
+                <Text style={styles.sex}>Sex: {datum.sex}</Text>
+              </View>
+            );
+          })}
+        </ScrollView>
+      )}
       <StatusBar style="auto" />
     </SafeAreaView>
-  )
-}
+  );
+};
 
 export default Users;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: "column",
     backgroundColor: "#fff",
-    margin: 20
+    margin: 20,
   },
   header: {
     fontWeight: "bold",

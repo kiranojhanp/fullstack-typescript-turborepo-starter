@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import useAppStateManager from "./hooks/useAppStateManager";
+import useOnlineManager from "./hooks/useOnlineManager";
 import Users from "./Users";
 
 const queryClient = new QueryClient({
@@ -7,6 +8,9 @@ const queryClient = new QueryClient({
 });
 
 export default function Native() {
+  useOnlineManager();
+  useAppStateManager();
+
   return (
     <QueryClientProvider client={queryClient}>
       <Users />

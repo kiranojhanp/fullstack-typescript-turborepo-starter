@@ -1,7 +1,7 @@
-describe('truth', () => {
-  it('is true', () => {
+describe("truth", () => {
+  it("is true", () => {
     expect(true).toEqual(true);
   });
 });
 
-export default {}
+export default {};
