@@ -51,10 +51,10 @@ npm i -g nps
 ```
 
 - Install Gnu make (Only for windows)
+
 ```
 choco install make
 ```
-
 
 - Make sure docker and docker-compose are
   installed. Refer to docs for your operating system.
@@ -62,6 +62,7 @@ choco install make
 ### Install Dependencies
 
 If you're running it for the first time, extract the environment variables using
+
 ```
 make extract.env
 ```
