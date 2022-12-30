@@ -67,7 +67,7 @@ make extract.env
 then just run
 
 ```
-make service.start
+make prepare
 ```
 
 ### Build
