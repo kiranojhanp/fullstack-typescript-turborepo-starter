@@ -54,7 +54,6 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - run: yarn global add turbo
-      - run: yarn global add nps
-      - run: nps prepare.ci.native
-      - run: nps test.ci.native
+      - run: make prepare.ci.native
+      - run: make test.ci.native
 

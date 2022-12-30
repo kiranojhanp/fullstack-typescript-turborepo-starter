@@ -8,6 +8,10 @@
     "dev": {
       "cache": false
     },
+    "test": {
+      "cache": false,
+      "outputs": []
+    },
     "lint": {
       "outputs": []
     },

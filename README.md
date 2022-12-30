@@ -4,6 +4,7 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 
 - ✅ Turborepo
 - ✅ Nestjs
+  - ✅ Fastify
   - ✅ Env Config with Validation
 - ✅ NextJS
 - ✅ React native powered by expo
@@ -12,7 +13,7 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 - ✅ Reverse Proxy using Nginx
 - ✅ Docker Integration
 - ✅ Postgres Database
-- ✅ Package scripts using NPS and makefile
+- ✅ Scripts using makefile
 
 ## What's inside?
 
@@ -44,12 +45,6 @@ This starter kit is using turborepo and yarn workspaces for monorepo workflow.
 
 ### Prerequisites
 
-- Install nps by running
-
-```
-npm i -g nps
-```
-
 - Install Gnu make (Only for windows)
 
 ```
@@ -61,13 +56,13 @@ choco install make
 
 ### Install Dependencies
 
-If you're running it for the first time, extract the environment variables using
+If you're running it for the first time, extract the environment variables using command below. Make sure you are at root of the project.
 
 ```
 make extract.env
 ```
 
-Make sure you are at root of the project and just run
+then just run
 
 ```
 make service.start

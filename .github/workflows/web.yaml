@@ -48,7 +48,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn global add turbo
-      - run: yarn global add nps
-      - run: nps prepare.ci.web
-      - run: nps build.ci.web
-      - run: nps test.ci.web
+      - run: make prepare.ci.web
+      - run: make build.ci
+      - run: make test.ci.web
