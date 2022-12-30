@@ -1,10 +1,12 @@
-import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query';
+import { getUsers } from "queries";
 import { Button } from "ui";
+
+import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 
 import styles from "../styles/index.module.css";
 
 export default function Web() {
-  const { data } = useQuery({ queryKey: ['posts'], queryFn: getPosts })
+  const { data } = useQuery({ queryKey: ['users'], queryFn: getUsers })
   return (
     <div className={styles.container}>
       <h1>Web</h1>
@@ -12,8 +14,8 @@ export default function Web() {
       {data.map((datum, index) => {
         return (
           <div key={index}>
-            <h5>{datum.title}</h5>
-            <p>{datum.body}</p>
+            <h5>{datum.firstName} {datum.lastName}</h5>
+            <p>Sex: {datum.sex}</p>
           </div>
         );
       })}
@@ -21,13 +23,9 @@ export default function Web() {
   );
 }
 
-const getPosts = async () => {
-  return await (await fetch("https://jsonplaceholder.typicode.com/posts")).json();
-}
-
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(['posts'], getPosts)
+  await queryClient.prefetchQuery(['users'], getUsers)
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
