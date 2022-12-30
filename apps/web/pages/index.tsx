@@ -1,5 +1,6 @@
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query';
 import { Button } from "ui";
+import { getPosts } from "queries";
 
 import styles from "../styles/index.module.css";
 
@@ -19,10 +20,6 @@ export default function Web() {
       })}
     </div>
   );
-}
-
-const getPosts = async () => {
-  return await (await fetch("https://jsonplaceholder.typicode.com/posts")).json();
 }
 
 export async function getStaticProps() {
