@@ -1,0 +1,17 @@
+{
+  "name": "queries",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup index.ts --format esm,cjs --dts",
+    "dev": "tsup index.ts --format esm,cjs --watch --dts",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "tsconfig": "*",
+    "tsup": "^6.0.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {}
+}
