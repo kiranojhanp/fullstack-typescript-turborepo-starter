@@ -14,7 +14,7 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
 
-  await app.listen(process.env.PORT, "0.0.0.0");
+  await app.listen(process.env.PORT, '0.0.0.0');
 
   if (module.hot) {
     module.hot.accept();

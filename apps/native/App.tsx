@@ -1,33 +1,19 @@
-import { StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { Button } from "ui";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import useAppStateManager from "./hooks/useAppStateManager";
+import useOnlineManager from "./hooks/useOnlineManager";
+import Users from "./Users";
+
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { retry: 2 } },
+});
 
 export default function Native() {
+  useOnlineManager();
+  useAppStateManager();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Native</Text>
-      <Button
-        onClick={() => {
-          console.log("Pressed!");
-          alert("Pressed!");
-        }}
-        text="Boop"
-      />
-      <StatusBar style="auto" />
-    </View>
+    <QueryClientProvider client={queryClient}>
+      <Users />
+    </QueryClientProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  header: {
-    fontWeight: "bold",
-    marginBottom: 20,
-    fontSize: 36,
-  },
-});

@@ -13,7 +13,12 @@ export interface ButtonProps {
 
 export function Button({ text, onClick }: ButtonProps) {
   return (
-    <TouchableOpacity style={styles.button} onPress={onClick}>
+    <TouchableOpacity
+      accessible={true}
+      accessibilityLabel="Tap me!"
+      style={styles.button}
+      onPress={onClick}
+    >
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
