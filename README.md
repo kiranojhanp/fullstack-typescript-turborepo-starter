@@ -13,11 +13,8 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 - ✅ Testing using Jest
 - ✅ Github Actions
 - ✅ Reverse Proxy using Nginx
-- ✅ Eslint and Prettier integration
 - ✅ Docker Integration
 - ✅ Postgres Database
-- ✅ Scripts using makefile
-- ✅ Husky and commit lint integration
 
 ## What's inside?
 
@@ -30,6 +27,9 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 - `web`: a [Next.js](https://nextjs.org) app
 - `ui`: a stub React native web component library shared by both `web` and `native`
 - `config`: `nginx`
+- `eslint-config-custom`: eslint configuration for web
+- `eslint-config-custom-server`: eslint configuration for nestjs api
+- `eslint-config-native`: eslint configuration for react native app
 - `tsconfig`: `tsconfig.json` used throughout the monorepo
 
 Each package/app is powered by [TypeScript](https://www.typescriptlang.org/).
@@ -38,10 +38,11 @@ Each package/app is powered by [TypeScript](https://www.typescriptlang.org/).
 
 This turborepo has some additional tools already setup for you:
 
-- [Node Package Scripts](https://github.com/sezna/nps#readme) for automation scripts
+- [Makefile](https://opensource.com/article/18/8/what-how-makefile) for automation scripts
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+- [Husky](https://github.com/typicode/husky) and [Commitizen](https://github.com/commitizen/cz-cli) as commit utilities
 
 ## Setup
 
