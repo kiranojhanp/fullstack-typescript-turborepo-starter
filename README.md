@@ -110,3 +110,10 @@ To develop web app, api and packages, run the following command at the root of p
 ```
 make dev.web
 ```
+
+### Develop
+To commit, run the following command at the root of project:
+
+```
+yarn commit
+```
