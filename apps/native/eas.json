@@ -1,0 +1,18 @@
+{
+  "cli": {
+    "version": ">= 0.52.0"
+  },
+  "build": {
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "credentialsSource": "remote"
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {}
+  }
+}
