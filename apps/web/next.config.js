@@ -1,5 +1,8 @@
 module.exports = {
   reactStrictMode: true,
+  experimental: {
+    transpilePackages: ["ui"],
+  },
   images: {
     domains: ["cloudflare-ipfs.com", "https://cloudflare-ipfs.com"],
   },
