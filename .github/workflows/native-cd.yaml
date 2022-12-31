@@ -6,6 +6,11 @@ on:
     paths:
       - "apps/native/**"
 
+  workflow_call:
+    secrets:
+      EXPO_TOKEN:
+        required: true
+
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -26,6 +31,7 @@ jobs:
           fi
 
       - uses: actions/checkout@v2
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
