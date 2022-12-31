@@ -12,8 +12,8 @@ describe('AppController', () => {
     }).compile();
   });
 
-  describe('getHello', () => {
-    it('should return "Hello World!"', async () => {
+  describe('getPeople', () => {
+    it('should return list of people', async () => {
       const appController = app.get(AppController);
       expect(Array.isArray(await appController.getPeople())).toBe(true);
       expect((await appController.getPeople()).length).toBeGreaterThan(0);
