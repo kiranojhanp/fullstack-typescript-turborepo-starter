@@ -13,6 +13,7 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 - ✅ Testing using Jest
 - ✅ Github Actions
 - ✅ Reverse Proxy using Nginx
+- ✅ Eslint and Prettier integration
 - ✅ Docker Integration
 - ✅ Postgres Database
 - ✅ Scripts using makefile
