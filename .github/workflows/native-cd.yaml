@@ -6,6 +6,11 @@ on:
     paths:
       - "apps/native/**"
 
+  workflow_call:
+    secrets:
+      EXPO_TOKEN:
+        required: true
+
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -26,6 +31,7 @@ jobs:
           fi
 
       - uses: actions/checkout@v2
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -57,7 +63,7 @@ jobs:
       - run: make prepare.ci.native
 
       - name: 🚀 Publish preview
-        run: expo publish --release-channel=pr-${{ github.event.number }} --non-interactive
+        run: cd out && expo publish --release-channel=pr-${{ github.event.number }} --non-interactive
 
       - name: 💬 Comment preview
         uses: expo/expo-github-action/preview-comment@v7

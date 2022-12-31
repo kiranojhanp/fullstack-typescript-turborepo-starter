@@ -11,7 +11,7 @@ build.ci:
 
 build.ci.native:
 	@printf "\033[0;32m>>> Building\033[0m\n"
-	eas build --platform android --profile preview
+	cd out && eas build --profile preview --platform android --non-interactive --clear-cache
 
 dev:
 	@printf "\033[0;32m>>> Running all apps in parallel\033[0m\n"
@@ -46,6 +46,10 @@ extract.env:
 format:
 	@printf "\033[0;32m>>> Formatting code using prettier \033[0m\n"
 	yarn format
+
+build.ci.native:
+	@printf "\033[0;32m>>> Building\033[0m\n"
+	cd out && eas build --profile preview --platform android --non-interactive --clear-cache
 
 install:
 	@printf "\033[0;32m>>> Installing\033[0m\n"
