@@ -9,6 +9,10 @@ build.ci:
 	@printf "\033[0;32m>>> Building\033[0m\n"
 	cd out && yarn build
 
+build.ci.native:
+	@printf "\033[0;32m>>> Building\033[0m\n"
+	eas build --platform android --profile preview
+
 dev:
 	@printf "\033[0;32m>>> Running all apps in parallel\033[0m\n"
 	yarn dev
