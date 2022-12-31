@@ -9,6 +9,8 @@
     "build": "turbo run build",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",
+    "lint": "turbo run lint --parallel",
+    "lint:fix": "turbo run lint --parallel",
     "test": "turbo run test --parallel"
   },
   "devDependencies": {

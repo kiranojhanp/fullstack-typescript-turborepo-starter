@@ -3,7 +3,8 @@
   "pipeline": {
     "build": {
       "outputs": ["dist/**", ".next/**"],
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "env": ["PORT"]
     },
     "dev": {
       "cache": false
@@ -13,6 +14,7 @@
       "outputs": []
     },
     "lint": {
+      "cache": false,
       "outputs": []
     },
     "clean": {

@@ -14,9 +14,7 @@ export default function Web() {
       {data?.map((datum, index) => {
         return (
           <div key={index}>
-            <h5>
-              {datum.title}
-            </h5>
+            <h5>{datum.title}</h5>
             <p>Sex: {datum.body}</p>
           </div>
         );

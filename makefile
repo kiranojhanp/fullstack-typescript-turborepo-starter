@@ -39,9 +39,21 @@ extract.env:
 	@printf "\033[0;32m>>> Extracting necessary .env \033[0m\n"
 	cd apps/api && cp .env.example .env
 
+format:
+	@printf "\033[0;32m>>> Formatting code using prettier \033[0m\n"
+	yarn format
+
 install:
 	@printf "\033[0;32m>>> Installing\033[0m\n"
 	yarn
+
+lint:
+	@printf "\033[0;32m>>> Running lint\033[0m\n"
+	yarn lint
+
+lint.fix:
+	@printf "\033[0;32m>>> Fixing lint issues\033[0m\n"
+	yarn lint:fix
 
 prepare:
 	@printf "\033[0;32m>>> Preparing necessary services for application\033[0m\n"
