@@ -20,7 +20,7 @@
     "lint": "turbo run lint --parallel",
     "lint:fix": "turbo run lint --parallel",
     "pretty-quick": "pretty-quick",
-    "postinstall": "husky install",
+    "prepare-husky": "husky install",
     "test": "turbo run test --parallel"
   },
   "devDependencies": {
