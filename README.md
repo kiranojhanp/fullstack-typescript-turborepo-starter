@@ -17,6 +17,7 @@ This is fullstack typescript turborepo starter. It comes with the following feat
 - ✅ Docker Integration
 - ✅ Postgres Database
 - ✅ Scripts using makefile
+- ✅ Husky and commit lint integration
 
 ## What's inside?
 
